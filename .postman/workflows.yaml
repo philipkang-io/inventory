@@ -1,0 +1,6 @@
+workflows:
+  syncSpecToCollection:
+    - spec: ../index.yaml
+      collection: ../postman/collections/Inventory API - Integration Test Suite
+      options:
+        syncExamples: false

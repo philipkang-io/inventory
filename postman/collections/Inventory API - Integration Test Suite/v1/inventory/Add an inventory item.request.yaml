@@ -1,0 +1,31 @@
+$kind: http-request
+url: "{{baseUrl}}/v1/inventory"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "sku": "SKU-{{$randomInt}}",
+      "name": "Demo Product",
+      "quantity": 10
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status code is 201", function () {
+          pm.response.to.have.status(201);
+      });
+      pm.test("Response has sku", function () {
+          const json = pm.response.json();
+          pm.expect(json).to.have.property("sku");
+          pm.variables.set("sku", json.sku);
+      });
+      pm.test("Item is available", function () {
+          const json = pm.response.json();
+          pm.expect(json.available).to.be.true;
+      });
+    language: text/javascript
+order: 1000

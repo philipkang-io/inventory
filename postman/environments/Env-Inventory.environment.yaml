@@ -1,0 +1,4 @@
+name: Env-Inventory
+values:
+  - key: baseUrl
+    value: 'INVENTORY_MOCK_URL'
