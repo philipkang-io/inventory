@@ -26,4 +26,4 @@ jobs:
       - name: Run API tests
         run: |
           postman collection run "52509354-1cab5051-40e7-4775-a6a7-539def768210" \
-            -e "52509354-5c116065-70f2-4cad-8357-1b7222964def" --report-events
+            -e "52509354-91682dc0-966d-4a33-ac89-38f9995a2ae0" --report-events

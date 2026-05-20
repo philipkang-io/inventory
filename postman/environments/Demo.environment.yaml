@@ -1,4 +1,2 @@
 name: Demo
-values:
-  - key: baseUrl
-    value: 'https://dab6c24a-6e01-40d2-9f34-0fd8436557e8.mock.pstmn.io'
+values: []
